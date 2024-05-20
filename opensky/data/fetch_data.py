@@ -11,3 +11,5 @@ def fetch_data():
             state[12], state[13], state[14], state[15], state[16]
         ) for state in data]
     return None
+
+

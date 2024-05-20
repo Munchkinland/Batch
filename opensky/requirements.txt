@@ -1,0 +1,15 @@
+# Frameworks and libraries for web development
+Flask==2.0.2         # Si estás usando Flask como tu framework web
+Django==3.2.9        # Si estás usando Django (solo elige uno, Flask o Django)
+
+# Database drivers
+psycopg2-binary==2.9.3   # Driver para PostgreSQL
+
+# API and HTTP requests
+requests==2.26.0     # Para realizar peticiones HTTP
+
+# Environment and configuration management
+python-dotenv==0.19.1  # Para cargar variables de entorno desde un archivo .env
+
+# Testing tools
+pytest==6.2.5         # Si estás usando pytest para pruebas

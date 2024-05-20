@@ -1,15 +1,16 @@
-from data.fetch_data import fetch_data
-from db.database import insert_data
-from dotenv import load_dotenv
-import os
+import requests
 
-def main():
-    load_dotenv()  # Carga las variables de entorno desde .env
-    data = fetch_data()
-    if data:
-        insert_data(data)
+def fetch_data():
+    url = "https://opensky-network.org/api/states/all"  # Asegúrate de que esta es la URL correcta
+    response = requests.get(url)
+    print("Status Code:", response.status_code)  # Imprime el código de estado HTTP
+    if response.status_code == 200:
+        data = response.json()['states']
+        if data:
+            return data
+        else:
+            print("No data found in response.")
+            return None
     else:
-        print("No data fetched from API.")
-
-if __name__ == "__main__":
-    main()
+        print("Failed to fetch data:", response.text)  # Imprime el cuerpo de la respuesta si falla
+        return None
